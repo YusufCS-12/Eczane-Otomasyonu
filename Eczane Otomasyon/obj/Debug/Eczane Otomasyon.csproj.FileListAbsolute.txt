@@ -1,0 +1,27 @@
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\bin\Debug\Eczane Otomasyon.exe.config
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\bin\Debug\Eczane Otomasyon.exe
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\bin\Debug\Eczane Otomasyon.pdb
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.csprojAssemblyReference.cache
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Properties.Resources.resources
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.csproj.GenerateResource.cache
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.exe
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.pdb
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form1.resources
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form2.resources
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form3.resources
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form4.resources
+C:\Users\Baran\Desktop\Eczane Otomasyon\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form5.resources
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\bin\Debug\Eczane Otomasyon.exe.config
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\bin\Debug\Eczane Otomasyon.exe
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.csprojAssemblyReference.cache
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form1.resources
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form2.resources
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form3.resources
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form4.resources
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Form5.resources
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane_Otomasyon.Properties.Resources.resources
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.csproj.GenerateResource.cache
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.csproj.CoreCompileInputs.cache
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.exe
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\obj\Debug\Eczane Otomasyon.pdb
+C:\Users\YCS\Desktop\Eczane Otomasyon Orijinal\Eczane Otomasyon - Kopya\Eczane Otomasyon\bin\Debug\Eczane Otomasyon.pdb

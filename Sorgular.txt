@@ -1,0 +1,45 @@
+
+/*yeşil ve kırmızı reçeteli geçtiğimiz ay ilaç yazılmış hastalar*/
+select hastalar.adi,hastalar.soyadi from ((receteler inner join ilaclar on ilaclar.ilacID=receteler.ilacID) inner join hastalar on hastalar.hastaID=receteler.hastaID) where ilaclar.receteTuruID IN(2,3) and month(Format(receteler.receteTarihi,"mm/dd/yyyy"))=month((now())-1) and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=year(now())
+
+/* Kontrole tabi bu yıl yazılmış ilaçların toplam adet*/
+select ilaclar.ilac,SUM(receteler.adet) from ((receteler inner join ilaclar on ilaclar.ilacID=receteler.ilacID) inner join hastalar on hastalar.hastaID=receteler.hastaID) where ilaclar.receteTuruID=1 and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=year(now()) group by ilaclar.ilac
+
+/* Kontrole tabi 5 önce yıl yazılmış ilaçların toplam adet*/
+select ilaclar.ilac,SUM(receteler.adet) from ((receteler inner join ilaclar on ilaclar.ilacID=receteler.ilacID) inner join hastalar on hastalar.hastaID=receteler.hastaID) where ilaclar.receteTuruID=1 and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=year(now()) group by ilaclar.ilac
+
+/* bir ay içinde reçetesini kullanmayan hastalar */
+select receteler.receteID,receteTuru.receteTuru,receteTarihi,receteKodu,ilaclar.ilacID,ilaclar.ilac,ilaclar.fiyat,adet,sigortalar.odeme,receteler.eczaneID,hastalar.TC from ((((receteler inner join hastalar on hastalar.hastaID=receteler.hastaID) inner join sigortalar on sigortalar.sigortaID=hastalar.sigortaID) inner join ilaclar on ilaclar.ilacID=receteler.ilacID) inner join receteTuru on receteTuru.receteTuruID=ilaclar.receteTuruID) where receteler.durum=0 and month(Format(receteler.receteTarihi,"mm/dd/yyyy"))=(month(now())-1) and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=year(now())
+
+/* Yeşil reçetelerden bu yıl yazılmış ilaçların toplam adet*/
+select ilaclar.ilac,SUM(receteler.adet) from ((receteler inner join ilaclar on ilaclar.ilacID=receteler.ilacID) inner join hastalar on hastalar.hastaID=receteler.hastaID) where ilaclar.receteTuruID=2 and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=year(now()) group by ilaclar.ilac
+
+/* dün alınmış kırmızı reçeteli ilaçlar */
+select hastalar.adi,hastalar.soyadi from ((receteler inner join ilaclar on ilaclar.ilacID=receteler.ilacID) inner join hastalar on hastalar.hastaID=receteler.hastaID) where ilaclar.receteTuruID IN(3) and month(Format(receteler.receteTarihi,"mm/dd/yyyy"))=month(now()) and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=year(now()) and day(Format(receteler.receteTarihi,"mm/dd/yyyy"))=(day(now())-1)
+
+/* prozac adlı ilacı bu sene kaç adet alınmış*/
+select SUM(receteler.adet) from ((receteler inner join ilaclar on ilaclar.ilacID=receteler.ilacID) inner join hastalar on hastalar.hastaID=receteler.hastaID) where ilaclar.ilacID=3 and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=year(now()) group by ilaclar.ilac
+
+/* geçtiğimiz ay alınmış yeşil reçeteli ilaçlar */
+select hastalar.adi,hastalar.soyadi from ((receteler inner join ilaclar on ilaclar.ilacID=receteler.ilacID) inner join hastalar on hastalar.hastaID=receteler.hastaID) where ilaclar.receteTuruID IN(2) and month(Format(receteler.receteTarihi,"mm/dd/yyyy"))=month(now()) and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=(year(now())-1)
+
+/* reçetesiz olarak dün alınmış kontrole tabi olmayan ilaçları göster */
+select * from recetesizler inner join ilaclar on ilaclar.ilacID=recetesizler.ilacID where ilaclar.receteTuruID NOT IN (1) and month(Format(recetesizler.tarih,"mm/dd/yyyy"))=month(now()) and year(Format(recetesizler.tarih,"mm/dd/yyyy"))=year(now()) and day(Format(recetesizler.tarih,"mm/dd/yyyy"))=(day(now())-1)
+
+/* reçetesiz olarak geçtiğimiz ay alınmış kontrole tabi olan ilaçları göster */
+select * from recetesizler inner join ilaclar on ilaclar.ilacID=recetesizler.ilacID where ilaclar.receteTuruID IN (1) and month(Format(recetesizler.tarih,"mm/dd/yyyy"))=(month(now())-1) and year(Format(recetesizler.tarih,"mm/dd/yyyy"))=year(now())
+
+/* vezirköprü ilçesindeki eczanelerin listesi*/
+select eczaneler.eczaneID,eczaneler.eczane,ilceler.ilceID,ilceler.ilce,sehirler.sehirID from ((eczaneler inner join ilceler on ilceler.ilceID=eczaneler.ilceID) inner join sehirler on ilceler.sehirID=sehirler.sehirID) where ilceler.ilce='Vezirkopru'
+
+/* vezirköprü ilçesindeki eczanelerin son yılda yazdıkları ilaçlar*/
+select eczaneler.eczaneID,eczaneler.eczane,ilceler.ilceID,ilceler.ilce,sehirler.sehirID from (((eczaneler inner join ilceler on ilceler.ilceID=eczaneler.ilceID) inner join sehirler on ilceler.sehirID=sehirler.sehirID) inner join receteler on receteler.eczaneID=eczaneler.eczaneID) where ilceler.ilce='Vezirkopru' and month(Format(receteler.receteTarihi,"mm/dd/yyyy"))=month(now()) and year(Format(receteler.receteTarihi,"mm/dd/yyyy"))=(year(now())-1)
+
+/* reçetesiz olarak 5 gün önce alınmış kırmızı reçete olmayanlar ilaç alımlarını göster */
+select * from recetesizler inner join ilaclar on ilaclar.ilacID=recetesizler.ilacID where ilaclar.receteTuruID NOT IN (3) and month(Format(recetesizler.tarih,"mm/dd/yyyy"))=month(now()) and year(Format(recetesizler.tarih,"mm/dd/yyyy"))=year(now()) and day(Format(recetesizler.tarih,"mm/dd/yyyy"))=(day(now())-5)
+
+/* reçetesiz olarak geçtiğimiz 3 ay önce alınmış yeşil olan ilaç alımlarını göster */
+select * from recetesizler inner join ilaclar on ilaclar.ilacID=recetesizler.ilacID where ilaclar.receteTuruID IN (2) and month(Format(recetesizler.tarih,"mm/dd/yyyy"))=(month(now())-3) and year(Format(recetesizler.tarih,"mm/dd/yyyy"))=year(now())
+
+/* reçetesiz olarak 5 gün önce alınmış kırmızı reçetelerin toplamını TC'lere göster */
+select SUM(recetesizler.adet) from recetesizler inner join ilaclar on ilaclar.ilacID=recetesizler.ilacID where ilaclar.receteTuruID NOT IN (3) and month(Format(recetesizler.tarih,"mm/dd/yyyy"))=month(now()) and year(Format(recetesizler.tarih,"mm/dd/yyyy"))=year(now()) and day(Format(recetesizler.tarih,"mm/dd/yyyy"))=(day(now())-5) group by recetesizler.TC
